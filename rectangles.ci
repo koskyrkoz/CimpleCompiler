@@ -1,0 +1,49 @@
+program rectangles							
+	declare w,l,per,ar;
+	#function that calculates the perimeter of a rectangle#
+	function perimeter(in w, in l)
+	{
+		return ((w*2)+(l*2));	
+	}
+	
+	#function that calculates the area of a rectangle#
+	function area(in w, in l)
+	{			
+		return (w*l);
+	}
+	
+	#function that turns a negative number to a positive#
+	function convertNegative(in w)
+	{
+		return (w*(-1));
+	}
+	
+	#main function#
+	{
+		#user inputs the width and length of a rectangle#
+		input (w);
+		input (l);
+		if([w > 0] and [l > 0]) 
+		{		#if user inputs valid (positive) numbers, proceed#
+			per:=perimeter(in w, in l);
+			print(per);
+			ar:=area(in w, in l);
+			print(ar);
+		}	
+		#else convert negative number(s) and proceed#
+		else
+		{
+			if(w<0) 
+			{
+				w:=convertNegative(in w);
+			};
+			if(l<0) 
+			{
+				l:=convertNegative(in l);
+			};
+			per:=perimeter(in w, in l);
+			print(per);
+			ar:=area(in w, in l);
+			print(ar);
+		};
+	}.

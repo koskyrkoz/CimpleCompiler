@@ -1,0 +1,33 @@
+program powerof2
+	declare n,x,two,pow,dif;
+	
+	#function that finds the nearest power of 2#
+	function power(in n)
+	{
+		pow := 1;
+		while(pow<n)
+		{
+			pow := (pow*2);
+		};
+		return (pow);
+	}
+	
+	#function for absolute#
+	function abs(in x)
+	{
+		if(x<0)
+		{
+			return (-x);
+		};
+		return (x);
+	}
+	
+	#main function#
+	{
+		input(n);
+		print(pow(in n));
+		#also print difference between number and power of 2#
+		n := (n-pow(in n));
+		dif := (abs(in n));
+		print(dif);
+	}.
